@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package lookup;
+package org.geekbang.thinking.in.spring.dependency.lookup;
 
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.BeansException;
