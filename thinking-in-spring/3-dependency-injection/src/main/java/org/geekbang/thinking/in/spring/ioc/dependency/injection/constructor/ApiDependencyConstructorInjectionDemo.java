@@ -1,17 +1,18 @@
-package org.geekbang.thinking.in.spring.ioc.dependency.injection;
+package org.geekbang.thinking.in.spring.ioc.dependency.injection.constructor;
 
+import org.geekbang.thinking.in.spring.ioc.dependency.injection.UserHolder;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ApiDependencySetterInjectionDemo {
+public class ApiDependencyConstructorInjectionDemo {
 
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
-        applicationContext.register(ApiDependencySetterInjectionDemo.class);
+        applicationContext.register(ApiDependencyConstructorInjectionDemo.class);
 
         BeanDefinition userHolderBeanDefinition = createUserHolderBeanDefinition();
 
@@ -59,16 +60,8 @@ public class ApiDependencySetterInjectionDemo {
 
     public static BeanDefinition createUserHolderBeanDefinition() {
         BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(UserHolder.class);
-        builder.addPropertyReference("user", "superUser");
+        builder.addConstructorArgReference("superUser");
         return builder.getBeanDefinition();
     }
-
-
-//    public static BeanDefinition createUserHolderBeanDefinition() {
-//        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(UserHolder.class);
-//        builder.addPropertyReference("user", "superUser");
-//        return builder.getBeanDefinition();
-//    }
-
 
 }
