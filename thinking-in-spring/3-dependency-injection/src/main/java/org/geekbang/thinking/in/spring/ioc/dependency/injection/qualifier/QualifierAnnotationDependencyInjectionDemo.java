@@ -1,8 +1,6 @@
 package org.geekbang.thinking.in.spring.ioc.dependency.injection.qualifier;
 
-import org.geekbang.thinking.in.spring.ioc.dependency.injection.UserHolder;
 import org.geekbang.thinking.in.spring.ioc.dependency.injection.annotation.UserGroup;
-import org.geekbang.thinking.in.spring.ioc.dependency.injection.setter.AnnotationDependencySetterInjectionDemo;
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
